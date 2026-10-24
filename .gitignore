@@ -1,0 +1,7 @@
+/.quarto/
+/_site/
+.Rhistory
+.RData
+.DS_Store
+
+**/*.quarto_ipynb

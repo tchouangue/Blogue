@@ -1,0 +1,10 @@
+{
+  "name": "outils-blogue",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@fontsource-variable/bricolage-grotesque": "^5.0.0",
+    "@fontsource-variable/literata": "^5.0.0",
+    "mathjax-full": "^3.2.2"
+  }
+}

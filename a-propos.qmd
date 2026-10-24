@@ -1,0 +1,22 @@
+---
+title: "À propos"
+toc: false
+---
+
+## Qui écrit ici?
+
+Je suis analyste et scientifique des données. Je travaille avec des **données administratives** : de grandes bases de données produites par des organismes publics (écoles, santé, services sociaux, etc.) et utilisées par des chercheurs pour répondre à des questions concrètes.
+
+Ce blogue explique, en mots simples, **comment on passe d'une base de données brute à une réponse fiable** : créer des variables, structurer une base, choisir une méthode statistique et interpréter les résultats.
+
+## À qui s'adresse ce blogue?
+
+À toute personne curieuse. Aucune formation en statistique n'est nécessaire : chaque article part d'une question concrète, explique l'idée avec des images et des analogies, puis montre un exemple.
+
+## Une règle importante
+
+**Aucune donnée réelle ni aucun résultat individuel n'est publié ici.** Tous les exemples reposent sur des données simulées ou sur des situations génériques.
+
+## Me joindre
+
+*[Ajoutez ici votre courriel, votre profil LinkedIn ou un formulaire de contact.]*

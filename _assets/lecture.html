@@ -1,0 +1,19 @@
+<div class="barre-lecture" aria-hidden="true"><div></div></div>
+<script>
+(function () {
+  var barre = document.querySelector('.barre-lecture > div');
+  var banniere = document.querySelector('.quarto-title-banner');
+  if (banniere) {
+    banniere.insertAdjacentHTML('afterbegin',
+      '<svg class="hero-champ" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="#champ-eq"/></svg>');
+  }
+  var raf = false;
+  function maj() {
+    raf = false;
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    barre.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, window.scrollY / h) : 0) + ')';
+  }
+  window.addEventListener('scroll', function () { if (!raf) { raf = true; requestAnimationFrame(maj); } }, {passive: true});
+  maj();
+})();
+</script>

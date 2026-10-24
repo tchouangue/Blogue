@@ -1,0 +1,28 @@
+---
+pagetitle: "Les données, simplement"
+html-math-method: plain
+page-layout: custom
+title-block-banner: false
+toc: false
+listing:
+  id: articles
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: false
+  fields: [date, title, description, categories, reading-time]
+  date-format: "D MMMM YYYY"
+---
+
+```{=html}
+{{< include _assets/traducteur.html >}}
+```
+
+::: {.conteneur}
+
+## Les articles {.liste-titre}
+
+::: {#articles}
+:::
+
+:::

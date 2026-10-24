@@ -1,0 +1,6 @@
+# Réglages communs à tous les articles
+freeze: auto
+toc: true
+author: "Gillis Tchouangue"
+title-block-banner: "#1B1F4B"
+title-block-banner-color: "#EEF5EF"

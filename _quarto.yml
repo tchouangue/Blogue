@@ -1,0 +1,43 @@
+project:
+  type: website
+  output-dir: _site
+
+lang: fr
+
+website:
+  title: "Les données, simplement"
+  description: "Comprendre les données administratives et les statistiques avancées, sans jargon."
+  site-url: "https://tchouangue.github.io/Blogue"
+  favicon: favicon.svg
+  navbar:
+    left:
+      - href: index.qmd
+        text: Articles
+      - href: a-propos.qmd
+        text: À propos
+    tools:
+      - icon: rss
+        href: index.xml
+  page-footer:
+    center: "Les données, simplement. Tous les exemples utilisent des données simulées."
+  search:
+    location: navbar
+    type: overlay
+
+format:
+  html:
+    theme: [default, fonts.scss, styles.scss]
+    include-before-body: _assets/champ.html
+    include-after-body: _assets/lecture.html
+    grid:
+      body-width: 700px
+      margin-width: 250px
+      gutter-width: 2.2rem
+    toc: true
+    toc-title: "Dans cet article"
+    code-fold: true
+    code-summary: "Voir le code"
+    code-copy: true
+    smooth-scroll: true
+    link-external-newwindow: true
+    title-block-banner: true

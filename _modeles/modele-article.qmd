@@ -1,0 +1,60 @@
+---
+title: "TITRE : une question que se pose le grand public"
+description: "Une phrase qui résume ce que le lecteur va comprendre."
+date: "AAAA-MM-JJ"
+categories: [variables]      # variables | bases-de-donnees | methodes | interpretation
+draft: true                  # retirer cette ligne pour publier
+---
+
+## La question
+
+*Le problème concret, formulé comme une personne non spécialiste le poserait.*
+
+::: {.callout-tip}
+## L'idée en une phrase
+*L'intuition centrale, sans formule ni jargon.*
+:::
+
+## Une analogie
+
+*Une comparaison de la vie courante qui rend l'idée tangible.*
+
+## Les étapes
+
+1. *Étape 1*
+2. *Étape 2*
+3. *Étape 3*
+
+## Un exemple sur données simulées
+
+```{r}
+#| label: exemple
+#| echo: true
+# Code d'exemple court, sur données simulées uniquement.
+set.seed(2026)
+```
+
+*Commentaire du résultat, en mots simples.*
+
+## Les pièges à éviter
+
+- *Piège 1*
+- *Piège 2*
+
+::: {.callout-note collapse="true"}
+## Pour les statisticiens
+*Le nom exact de la méthode, ses hypothèses, la référence classique. Replié par défaut : les curieux l'ouvrent, les autres passent.*
+:::
+
+::: {.a-retenir}
+**À retenir**
+
+- *Point 1*
+- *Point 2*
+- *Point 3*
+:::
+
+## Pour aller plus loin
+
+- *Lecture ou ressource accessible 1*
+- *Lecture ou ressource accessible 2*

@@ -1,0 +1,36 @@
+---
+title: "Bienvenue : les données, simplement"
+description: "Pourquoi ce blogue existe et comment les articles sont construits."
+date: "2026-10-24"
+categories: [bienvenue]
+---
+
+## Pourquoi ce blogue?
+
+Derrière chaque statistique publiée, il y a un long travail invisible : nettoyer des données, fabriquer des variables, choisir une méthode, vérifier qu'elle tient la route. Ce travail décide pourtant de la qualité de la réponse.
+
+Ce blogue ouvre la boîte noire, avec des mots simples.
+
+## Comment un article est construit
+
+Chaque article raconte une histoire : une personne, une question qui dérange, une enquête qui avance étape par étape. Derrière le récit, le chemin reste toujours le même :
+
+1. **La question** : un problème concret, posé par un chercheur ou une chercheuse.
+2. **Les étapes** : ce qu'on fait, dans l'ordre, avec de vrais calculs.
+3. **Les pièges** : ce qui peut mal tourner.
+4. **À retenir** : les points essentiels.
+
+Les précisions techniques sont rangées dans un encadré replié, « Pour les statisticiens » : les curieux l'ouvrent, les autres passent.
+
+::: {.callout-tip}
+## L'idée en une phrase
+Une bonne analyse commence bien avant le modèle statistique : elle commence par la façon dont on construit les variables et la base de données.
+:::
+
+## À venir
+
+Les premiers articles porteront sur la construction de variables à partir de données administratives, sur la comparaison de groupes qui ne se ressemblent pas au départ, et sur le choix d'une méthode statistique adaptée à la question posée.
+
+::: {.a-retenir}
+**À retenir** : tous les exemples de ce blogue utilisent des données simulées. Aucune information sur des personnes réelles n'est publiée.
+:::
