@@ -1,6 +1,6 @@
 ---
-title: "Le plan d'intervention est-il coupable? L'enquête des 40 élèves"
-description: "Un chiffre accuse le plan d'intervention tardif : 60 % de diplômés contre 85 %. Une analyste mène l'enquête avec 40 élèves inventés et une méthode bien réelle, la pondération."
+title: "Plans d'intervention : comparer Late IP et Never IP par pondération"
+description: "Chez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ."
 date: "2026-10-24"
 categories: [méthodes, trajectoires, pondération]
 ---
@@ -26,9 +26,9 @@ Nadia est analyste de données. Depuis des mois, elle suit des élèves année a
 
 (Il en existe deux autres, Transient IP, un PI transitoire, et Intermediate persistent IP, un PI persistant intermédiaire. Elles obéissent à la même logique.)
 
-Louis pointe deux chiffres.
+Louis pointe deux taux de diplomation, entourés au crayon.
 
-« Chez les élèves qui n'ont jamais eu de PI, 85 % obtiennent leur diplôme. Chez ceux dont le PI est arrivé tard, 60 %. Vingt-cinq points d'écart. Si le PI tardif fait chuter la réussite, il faut tout repenser. »
+« Parmi les élèves qui n'ont jamais eu de PI (Never IP), 85 % ont obtenu leur diplôme. Parmi ceux dont le PI est arrivé tard (Late IP), seulement 60 %. C'est un écart de 25 points. Si le PI tardif fait chuter la réussite, il faut tout repenser. »
 
 Nadia ne répond pas tout de suite. Elle a déjà vu ce genre de chiffre, et elle l'a déjà vu se retourner contre ceux qui le prenaient au pied de la lettre.
 
