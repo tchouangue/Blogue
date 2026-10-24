@@ -26,9 +26,9 @@ Nadia est analyste de données. Depuis des mois, elle suit des élèves année a
 
 (Il en existe deux autres, Transient IP, un PI transitoire, et Intermediate persistent IP, un PI persistant intermédiaire. Elles obéissent à la même logique.)
 
-Louis pointe deux taux de diplomation, entourés au crayon.
+Louis pose sur le bureau une feuille où deux pourcentages sont entourés au crayon. Ils mesurent la même chose, la proportion d'élèves qui ont obtenu leur diplôme, mais dans deux groupes différents.
 
-« Parmi les élèves qui n'ont jamais eu de PI (Never IP), 85 % ont obtenu leur diplôme. Parmi ceux dont le PI est arrivé tard (Late IP), seulement 60 %. C'est un écart de 25 points. Si le PI tardif fait chuter la réussite, il faut tout repenser. »
+« Regarde. Chez les élèves qui n'ont **jamais eu de plan d'intervention** (le groupe *Never IP*), 85 % ont obtenu leur diplôme. Chez ceux dont le plan d'intervention est **arrivé tard** (le groupe *Late IP*), ils ne sont que 60 %. Ça fait 25 points d'écart. Si un PI tardif fait chuter la réussite, il faut tout repenser. »
 
 Nadia ne répond pas tout de suite. Elle a déjà vu ce genre de chiffre, et elle l'a déjà vu se retourner contre ceux qui le prenaient au pied de la lettre.
 
