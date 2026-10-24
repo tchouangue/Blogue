@@ -1,54 +1,5 @@
 [
   {
-    "objectID": "a-propos.html#qui-écrit-ici",
-    "href": "a-propos.html#qui-écrit-ici",
-    "title": "À propos",
-    "section": "Qui écrit ici?",
-    "text": "Qui écrit ici?\nJe suis analyste et scientifique des données. Je travaille avec des données administratives : de grandes bases de données produites par des organismes publics (écoles, santé, services sociaux, etc.) et utilisées par des chercheurs pour répondre à des questions concrètes.\nCe blogue explique, en mots simples, comment on passe d’une base de données brute à une réponse fiable : créer des variables, structurer une base, choisir une méthode statistique et interpréter les résultats."
-  },
-  {
-    "objectID": "a-propos.html#à-qui-sadresse-ce-blogue",
-    "href": "a-propos.html#à-qui-sadresse-ce-blogue",
-    "title": "À propos",
-    "section": "À qui s’adresse ce blogue?",
-    "text": "À qui s’adresse ce blogue?\nÀ toute personne curieuse. Aucune formation en statistique n’est nécessaire : chaque article part d’une question concrète, explique l’idée avec des images et des analogies, puis montre un exemple."
-  },
-  {
-    "objectID": "a-propos.html#une-règle-importante",
-    "href": "a-propos.html#une-règle-importante",
-    "title": "À propos",
-    "section": "Une règle importante",
-    "text": "Une règle importante\nAucune donnée réelle ni aucun résultat individuel n’est publié ici. Tous les exemples reposent sur des données simulées ou sur des situations génériques."
-  },
-  {
-    "objectID": "a-propos.html#me-joindre",
-    "href": "a-propos.html#me-joindre",
-    "title": "À propos",
-    "section": "Me joindre",
-    "text": "Me joindre\n[Ajoutez ici votre courriel, votre profil LinkedIn ou un formulaire de contact.]"
-  },
-  {
-    "objectID": "posts/bienvenue/index.html#pourquoi-ce-blogue",
-    "href": "posts/bienvenue/index.html#pourquoi-ce-blogue",
-    "title": "Bienvenue : les données, simplement",
-    "section": "Pourquoi ce blogue?",
-    "text": "Pourquoi ce blogue?\nDerrière chaque statistique publiée, il y a un long travail invisible : nettoyer des données, fabriquer des variables, choisir une méthode, vérifier qu’elle tient la route. Ce travail décide pourtant de la qualité de la réponse.\nCe blogue ouvre la boîte noire, avec des mots simples."
-  },
-  {
-    "objectID": "posts/bienvenue/index.html#comment-un-article-est-construit",
-    "href": "posts/bienvenue/index.html#comment-un-article-est-construit",
-    "title": "Bienvenue : les données, simplement",
-    "section": "Comment un article est construit",
-    "text": "Comment un article est construit\nChaque article raconte une histoire : une personne, une question qui dérange, une enquête qui avance étape par étape. Derrière le récit, le chemin reste toujours le même :\n\nLa question : un problème concret, posé par un chercheur ou une chercheuse.\nLes étapes : ce qu’on fait, dans l’ordre, avec de vrais calculs.\nLes pièges : ce qui peut mal tourner.\nÀ retenir : les points essentiels.\n\nLes précisions techniques sont rangées dans un encadré replié, « Pour les statisticiens » : les curieux l’ouvrent, les autres passent.\n\n\n\n\n\n\nAstuceL’idée en une phrase\n\n\n\nUne bonne analyse commence bien avant le modèle statistique : elle commence par la façon dont on construit les variables et la base de données."
-  },
-  {
-    "objectID": "posts/bienvenue/index.html#à-venir",
-    "href": "posts/bienvenue/index.html#à-venir",
-    "title": "Bienvenue : les données, simplement",
-    "section": "À venir",
-    "text": "À venir\nLes premiers articles porteront sur la construction de variables à partir de données administratives, sur la comparaison de groupes qui ne se ressemblent pas au départ, et sur le choix d’une méthode statistique adaptée à la question posée.\n\nÀ retenir : tous les exemples de ce blogue utilisent des données simulées. Aucune information sur des personnes réelles n’est publiée."
-  },
-  {
     "objectID": "posts/ponderation-trajectoires-pi/index.html#le-chiffre-qui-dérange",
     "href": "posts/ponderation-trajectoires-pi/index.html#le-chiffre-qui-dérange",
     "title": "Plans d’intervention : comparer Late IP et Never IP par pondération",
@@ -112,10 +63,59 @@
     "text": "Là où l’enquête peut dérailler\nNadia connaît les limites de sa méthode, et elles valent pour toute vraie étude :\n\nLe chevauchement manquant. Imaginez qu’il n’y ait aucune Inès dans Never IP. Leur chance d’y être vaudrait 0 : leur poids exigerait une division par zéro. Les 3 Inès de Late IP n’auraient aucun jumeau, et on ne pourrait rien dire sur ce qu’elles auraient obtenu sans PI. En vraies données, le cas est plus nuancé, mais le principe reste le même.\nLes poids extrêmes. Quelques élèves qui comptent pour beaucoup peuvent dominer le résultat. Une pratique courante consiste à plafonner les poids les plus élevés à la valeur du 99e centile, c’est-à-dire à la valeur sous laquelle se trouvent 99 % des poids. Ici, le plus grand poids vaut 1,00 : rien à plafonner.\nLe score ne corrige que ce qu’on a mesuré. Nadia a deux caractéristiques ici. Ce qui n’est pas dans les données ne peut pas être rééquilibré.\nUn équilibre parfait n’est pas une preuve de causalité. Des groupes qui se ressemblent sur les variables mesurées peuvent encore différer sur autre chose.\n\n\n\n\n\n\n\nNotePour les statisticiens\n\n\n\n\n\nEstimand. Ces poids estiment l’effet moyen chez les élèves du groupe focal X (ATT). Les élèves de X gardent un poids de 1, ceux du groupe comparé Y reçoivent le rapport e_X(x) ÷ e_Y(x). Avec plusieurs trajectoires, les scores e_k(x) = P(T = k | x) viennent d’un seul modèle multinomial; chaque comparaison n’utilise que les deux scores de la paire.\nPourquoi ce poids (règle de Bayes). Pour que Y ressemble à X, un élève de Y de profil x doit compter comme P(x | X) ÷ P(x | Y). Par Bayes, P(x | k) = e_k(x) × P(x) ÷ P(k). Dans le rapport, P(x) s’annule : il reste e_X(x) ÷ e_Y(x), multiplié par la constante P(Y) ÷ P(X), identique pour tous les élèves. On la retire : elle s’annule dans les moyennes pondérées, qui divisent par la somme des poids. Sans elle, la somme des poids de Y égale l’effectif de X. Vérification pour Malik : e_Late = 2 ÷ 10, e_Never = 5 ÷ 10; P(x | Late) = 2 ÷ 10 = 0,20; P(x | Never) = 5 ÷ 20 = 0,25; le rapport des parts vaut 0,80, soit 0,40 × 2, où 2 = P(Never) ÷ P(Late) = 20 ÷ 10.\nChevauchement. On compare l’étendue du score par paire e_X ÷ (e_X + e_Y) dans les deux groupes. Ici : 0,50 (Inès), 0,29 (Malik), 0,43 (Camille), 0,20 (Émile). Un élève de X dont le score dépasse tous ceux de Y est hors support.\nTaille effective (Kish). ESS = (Σw)² ÷ Σw². Ici : 10² ÷ 6,55 = 15,3.\nSMD. Différence des moyennes (pondérée pour Y), divisée par l’écart-type du groupe focal, le même avant et après. Seuil usuel : 0,10. Pour une proportion p dans un groupe de n élèves : √(n ÷ (n − 1) × p × (1 − p)), soit 0,527 pour Défavorisé (p = 0,5, n = 10). Le choix de l’écart-type du groupe focal (plutôt que d’un écart-type regroupé) suit l’usage pour l’ATT : le dénominateur reste le même avant et après pondération. Références : Stuart (2010), Statistical Science, section 4.1; Stuart, Lee et Leacy (2013), Journal of Clinical Epidemiology; documentation du paquet R cobalt (argument s.d.denom, « treated » pour l’ATT).\nCe que la vraie analyse ajoute. Un modèle multinomial à effets principaux avec de nombreuses covariables, continues et binaires, mesurées au départ; cinq trajectoires comparées à partir d’un seul modèle; des vérifications strictes (effectifs minimaux, chevauchement, taille effective, SMD sous 0,10). L’estimation de l’écart une fois les élèves pondérés fera l’objet d’un prochain article.\n\n\n\n\nÀ retenir\n\nComparer deux groupes qui ne se ressemblent pas au départ mélange l’effet de la trajectoire et celui des profils.\nLe groupe focal garde un poids de 1. Le groupe comparé est repondéré pour lui ressembler.\nUne pondération se vérifie toujours : jumeaux, taille effective, équilibre (SMD sous 0,10).\nIci, le rapport de risques passe de 0,71 à 0,76 : une partie de l’écart venait des profils de départ, mais il en reste une."
   },
   {
+    "objectID": "a-propos.html#qui-écrit-ici",
+    "href": "a-propos.html#qui-écrit-ici",
+    "title": "À propos",
+    "section": "Qui écrit ici?",
+    "text": "Qui écrit ici?\nJe suis analyste et scientifique des données. Je travaille avec des données administratives : de grandes bases de données produites par des organismes publics (écoles, santé, services sociaux, etc.) et utilisées par des chercheurs pour répondre à des questions concrètes.\nCe blogue explique, en mots simples, comment on passe d’une base de données brute à une réponse fiable : créer des variables, structurer une base, choisir une méthode statistique et interpréter les résultats."
+  },
+  {
+    "objectID": "a-propos.html#à-qui-sadresse-ce-blogue",
+    "href": "a-propos.html#à-qui-sadresse-ce-blogue",
+    "title": "À propos",
+    "section": "À qui s’adresse ce blogue?",
+    "text": "À qui s’adresse ce blogue?\nÀ toute personne curieuse. Aucune formation en statistique n’est nécessaire : chaque article part d’une question concrète, explique l’idée avec des images et des analogies, puis montre un exemple."
+  },
+  {
+    "objectID": "a-propos.html#une-règle-importante",
+    "href": "a-propos.html#une-règle-importante",
+    "title": "À propos",
+    "section": "Une règle importante",
+    "text": "Une règle importante\nAucune donnée réelle ni aucun résultat individuel n’est publié ici. Tous les exemples reposent sur des données simulées ou sur des situations génériques."
+  },
+  {
+    "objectID": "a-propos.html#me-joindre",
+    "href": "a-propos.html#me-joindre",
+    "title": "À propos",
+    "section": "Me joindre",
+    "text": "Me joindre\n[Ajoutez ici votre courriel, votre profil LinkedIn ou un formulaire de contact.]"
+  },
+  {
     "objectID": "index.html#les-articles",
     "href": "index.html#les-articles",
     "title": "Les données, simplement",
     "section": "Les articles",
-    "text": "Les articles\n\n\n\n\n\nPlans d’intervention : comparer Late IP et Never IP par pondération\n\n\n\nméthodes\n\ntrajectoires\n\npondération\n\n\n\nChez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ.\n\n\n\n\n\n24 octobre 2026\n\n14 min.\n\n\n\n\n\n\nBienvenue : les données, simplement\n\n\n\nbienvenue\n\n\n\nPourquoi ce blogue existe et comment les articles sont construits.\n\n\n\n\n\n24 octobre 2026\n\n2 min.\n\n\n\n\nAucun article correspondant"
+    "text": "Les articles\n\n\n\n\n\nBienvenue : les données, simplement\n\n\n\nbienvenue\n\n\n\nPourquoi ce blogue existe et comment les articles sont construits.\n\n\n\n\n\n24 octobre 2026\n\n2 min.\n\n\n\n\n\n\nPlans d’intervention : comparer Late IP et Never IP par pondération\n\n\n\nméthodes\n\ntrajectoires\n\npondération\n\n\n\nChez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ.\n\n\n\n\n\n24 octobre 2026\n\n14 min.\n\n\n\n\nAucun article correspondant"
+  },
+  {
+    "objectID": "posts/bienvenue/index.html#pourquoi-ce-blogue",
+    "href": "posts/bienvenue/index.html#pourquoi-ce-blogue",
+    "title": "Bienvenue : les données, simplement",
+    "section": "Pourquoi ce blogue?",
+    "text": "Pourquoi ce blogue?\nDerrière chaque statistique publiée, il y a un long travail invisible : nettoyer des données, fabriquer des variables, choisir une méthode, vérifier qu’elle tient la route. Ce travail décide pourtant de la qualité de la réponse.\nCe blogue ouvre la boîte noire, avec des mots simples."
+  },
+  {
+    "objectID": "posts/bienvenue/index.html#comment-un-article-est-construit",
+    "href": "posts/bienvenue/index.html#comment-un-article-est-construit",
+    "title": "Bienvenue : les données, simplement",
+    "section": "Comment un article est construit",
+    "text": "Comment un article est construit\nChaque article raconte une histoire : une personne, une question qui dérange, une enquête qui avance étape par étape. Derrière le récit, le chemin reste toujours le même :\n\nLa question : un problème concret, posé par un chercheur ou une chercheuse.\nLes étapes : ce qu’on fait, dans l’ordre, avec de vrais calculs.\nLes pièges : ce qui peut mal tourner.\nÀ retenir : les points essentiels.\n\nLes précisions techniques sont rangées dans un encadré replié, « Pour les statisticiens » : les curieux l’ouvrent, les autres passent.\n\n\n\n\n\n\nAstuceL’idée en une phrase\n\n\n\nUne bonne analyse commence bien avant le modèle statistique : elle commence par la façon dont on construit les variables et la base de données."
+  },
+  {
+    "objectID": "posts/bienvenue/index.html#à-venir",
+    "href": "posts/bienvenue/index.html#à-venir",
+    "title": "Bienvenue : les données, simplement",
+    "section": "À venir",
+    "text": "À venir\nLes premiers articles porteront sur la construction de variables à partir de données administratives, sur la comparaison de groupes qui ne se ressemblent pas au départ, et sur le choix d’une méthode statistique adaptée à la question posée.\n\nÀ retenir : tous les exemples de ce blogue utilisent des données simulées. Aucune information sur des personnes réelles n’est publiée."
   }
 ]

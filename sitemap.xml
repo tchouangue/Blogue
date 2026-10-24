@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tchouangue.github.io/Blogue/a-propos.html</loc>
-    <lastmod>2026-10-24T14:56:26.869Z</lastmod>
-  </url>
-  <url>
-    <loc>https://tchouangue.github.io/Blogue/posts/bienvenue/index.html</loc>
-    <lastmod>2026-10-24T15:46:16.341Z</lastmod>
-  </url>
-  <url>
     <loc>https://tchouangue.github.io/Blogue/posts/ponderation-trajectoires-pi/index.html</loc>
-    <lastmod>2026-10-24T18:00:33.435Z</lastmod>
+    <lastmod>2026-10-24T18:01:08.839Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tchouangue.github.io/Blogue/a-propos.html</loc>
+    <lastmod>2026-10-24T18:01:08.838Z</lastmod>
   </url>
   <url>
     <loc>https://tchouangue.github.io/Blogue/index.html</loc>
-    <lastmod>2026-10-24T15:09:06.614Z</lastmod>
+    <lastmod>2026-10-24T18:01:08.838Z</lastmod>
+  </url>
+  <url>
+    <loc>https://tchouangue.github.io/Blogue/posts/bienvenue/index.html</loc>
+    <lastmod>2026-10-24T18:01:08.839Z</lastmod>
   </url>
 </urlset>
