@@ -192,7 +192,7 @@ Louis fronce les sourcils. « Il reste donc un écart.
 La comparaison corrigée est plus juste que la comparaison brute, mais elle décrit une **association à profil égal, sur les caractéristiques mesurées**. Elle ne prouve pas que le PI cause l'écart restant.
 :::
 
-Louis range sa feuille. L'accusation de départ n'est plus aussi solide, mais l'enquête n'est pas close. Dans le prochain article, Nadia s'attaquera à la suite : estimer l'écart qui reste et mesurer sa marge d'incertitude.
+Louis range sa feuille. L'accusation de départ n'est plus aussi solide, mais l'enquête n'est pas close. La suite se lit dans [l'article suivant](../incertitude-ponderation/index.qmd) : Nadia estime l'écart qui reste et mesure sa marge d'incertitude.
 
 ## Un deuxième suspect
 
@@ -233,7 +233,7 @@ Nadia connaît les limites de sa méthode, et elles valent pour toute vraie étu
 
 *Pourquoi cet écart-type.* Le choix de l'écart-type du groupe focal (plutôt que d'un écart-type regroupé) suit l'usage pour l'ATT : le dénominateur reste le même avant et après pondération. Références : Stuart (2010), *Statistical Science*, section 4.1; Stuart, Lee et Leacy (2013), *Journal of Clinical Epidemiology*; documentation du paquet R `cobalt` (argument `s.d.denom`, « treated » pour l'ATT).
 
-**Ce que la vraie analyse ajoute.** Un modèle multinomial à effets principaux avec de nombreuses covariables, continues et binaires, mesurées au départ; cinq trajectoires comparées à partir d'un seul modèle; des vérifications strictes (effectifs minimaux, chevauchement, taille effective, SMD sous 0,10). L'estimation de l'écart une fois les élèves pondérés fera l'objet d'un prochain article.
+**Ce que la vraie analyse ajoute.** Un modèle multinomial à effets principaux avec de nombreuses covariables, continues et binaires, mesurées au départ; cinq trajectoires comparées à partir d'un seul modèle; des vérifications strictes (effectifs minimaux, chevauchement, taille effective, SMD sous 0,10). L'estimation de l'écart une fois les élèves pondérés est traitée dans [l'article suivant](../incertitude-ponderation/index.qmd).
 :::
 
 ::: {.a-retenir}
