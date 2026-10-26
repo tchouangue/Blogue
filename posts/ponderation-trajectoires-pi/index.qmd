@@ -1,5 +1,5 @@
 ---
-title: "Plans d'intervention : comparer Late IP et Never IP par pondération"
+title: "Comment mettre tout le monde sur le même pied d'égalité (quand les chiffres trichent)"
 description: "Chez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ."
 date: "2026-10-24"
 categories: [méthodes, trajectoires, pondération]
@@ -10,9 +10,18 @@ categories: [méthodes, trajectoires, pondération]
 Nadia, Louis et les 40 élèves de cette histoire n'existent pas. Les chiffres sont fictifs, mais chaque calcul est exact, et la méthode est celle qu'utilisent de vraies recherches. Les données sont assez petites pour tout refaire à la main : [le fichier des 40 élèves se télécharge ici (CSV)](eleves-simules.csv).
 :::
 
+::: {.callout-tip}
+## Dico express
+- **PI** : plan d'intervention, le document qui planifie le soutien offert à un élève en difficulté.
+- **Trajectoire** : la façon dont les PI se succèdent dans le temps (*Never IP* : jamais de PI; *Late IP* : un PI qui arrive tard).
+- **Rapport de risques** : le pourcentage de réussite d'un groupe divisé par celui d'un autre groupe.
+- **Pondération** : faire compter certains élèves plus que d'autres pour que les deux groupes se ressemblent.
+- **SMD** : l'écart entre deux groupes sur une caractéristique, exprimé dans une unité comparable d'une caractéristique à l'autre.
+:::
+
 ## Le chiffre qui dérange
 
-Un jeudi de novembre, Louis entre dans le bureau de Nadia, une feuille à la main. Il coordonne les services aux élèves d'un réseau scolaire, et il a l'air inquiet.
+C'est une erreur classique : on regarde deux pourcentages, on pousse un cri d'orfraie, et on tire de mauvaises conclusions. Un jeudi de novembre, Louis entre dans le bureau de Nadia, une feuille à la main. Il coordonne les services aux élèves d'un réseau scolaire, et il a l'air inquiet.
 
 « Regarde ça. »
 
@@ -125,19 +134,19 @@ Elle additionne les poids : **10,0**. C'est exactement l'effectif de Late IP. Ne
 
 Nadia a appris à se méfier de ses propres résultats. Une pondération n'est pas une preuve. Avant de croire quoi que ce soit, elle la soumet à trois questions.
 
-### Y a-t-il des jumeaux?
+### Est-ce qu'on compare vraiment des pommes avec des pommes?
 
 Pour chaque type d'élève de Late IP, il doit exister des élèves semblables dans Never IP. Sinon, la pondération n'a personne à qui donner du poids : elle ne peut pas inventer des élèves qui n'existent pas.
 
 Ici, les quatre profils existent dans les deux groupes. **Aucun élève de Late IP n'est sans jumeau** : 0 % d'élèves hors de la zone de comparaison.
 
-### Combien d'élèves restent vraiment?
+### Reste-t-il assez d'élèves pour que ça compte?
 
 Des poids inégaux font perdre de l'information : une voix qui compte pour le quart d'une autre en dit moins. Les 20 élèves de Never IP équivalent à **15,3 élèves** « pleinement utiles ». Le calcul : (somme des poids)² ÷ somme des carrés des poids = 10² ÷ 6,55 = 15,3.
 
 Autre inquiétude : qu'un seul élève pèse trop lourd. Ici, le poids le plus élevé représente 10 % du total. Dans une vraie étude, on s'inquiéterait dès 5 %. Mais avec seulement 20 élèves à pondérer, c'est inévitable : un élève sur vingt pèse déjà 5 %. Nadia a volontairement choisi un petit exemple pour que tout reste calculable à la main. Dans la vraie vie, il faut beaucoup plus d'élèves par groupe.
 
-### Les deux photos se ressemblent-elles enfin?
+### La photo de classe est-elle enfin retouchée correctement?
 
 Pour mesurer l'écart entre deux groupes sur une caractéristique, Nadia utilise la **différence moyenne standardisée (SMD)** : l'écart entre les moyennes, divisé par l'écart-type du groupe focal. Sous 0,10, on considère les groupes comparables.
 
