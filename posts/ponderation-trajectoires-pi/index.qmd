@@ -220,7 +220,18 @@ Nadia connaît les limites de sa méthode, et elles valent pour toute vraie étu
 
 **Taille effective (Kish).** ESS = (Σw)² ÷ Σw². Ici : 10² ÷ 6,55 = 15,3.
 
-**SMD.** Différence des moyennes (pondérée pour Y), divisée par l'écart-type du groupe focal, le même avant et après. Seuil usuel : 0,10. Pour une proportion p dans un groupe de n élèves : √(n ÷ (n − 1) × p × (1 − p)), soit 0,527 pour Défavorisé (p = 0,5, n = 10). Le choix de l'écart-type du groupe focal (plutôt que d'un écart-type regroupé) suit l'usage pour l'ATT : le dénominateur reste le même avant et après pondération. Références : Stuart (2010), *Statistical Science*, section 4.1; Stuart, Lee et Leacy (2013), *Journal of Clinical Epidemiology*; documentation du paquet R `cobalt` (argument `s.d.denom`, « treated » pour l'ATT).
+**SMD.** Différence des moyennes (pondérée pour Y), divisée par l'écart-type du groupe focal, le même avant et après. Seuil usuel : 0,10.
+
+*Calcul détaillé.* Une caractéristique oui/non vaut 1 ou 0 pour chaque élève, donc sa moyenne est la proportion p d'élèves « oui ». Son écart-type, pour n élèves, est √(n ÷ (n − 1) × p × (1 − p)).
+
+- **Moyenne du groupe focal (Late IP, n = 10).** Défavorisé : 5 élèves sur 10, soit p = 0,50. Diagnostic : 6 sur 10, soit p = 0,60.
+- **Écart-type du groupe focal.** Défavorisé : √(10 ÷ 9 × 0,50 × 0,50) = √0,2778 = **0,527**. Diagnostic : √(10 ÷ 9 × 0,60 × 0,40) = √0,2667 = **0,516**.
+- **Moyenne du groupe comparé (Never IP) avant pondération (n = 20).** Défavorisé : 8 sur 20, soit 0,40. Diagnostic : 7 sur 20, soit 0,35.
+- **Moyenne du groupe comparé après pondération.** On pondère chaque élève par son poids, puis on divise par la somme des poids (10). Défavorisé : (3 × 1,00 + 5 × 0,40) ÷ 10 = 0,50. Diagnostic : (3 × 1,00 + 4 × 0,75) ÷ 10 = 0,60.
+- **SMD avant.** Défavorisé : (0,50 − 0,40) ÷ 0,527 = **0,19**. Diagnostic : (0,60 − 0,35) ÷ 0,516 = **0,48**.
+- **SMD après.** Les moyennes sont identiques, donc 0 ÷ 0,527 = 0 et 0 ÷ 0,516 = 0, soit **0,00** pour les deux.
+
+*Pourquoi cet écart-type.* Le choix de l'écart-type du groupe focal (plutôt que d'un écart-type regroupé) suit l'usage pour l'ATT : le dénominateur reste le même avant et après pondération. Références : Stuart (2010), *Statistical Science*, section 4.1; Stuart, Lee et Leacy (2013), *Journal of Clinical Epidemiology*; documentation du paquet R `cobalt` (argument `s.d.denom`, « treated » pour l'ATT).
 
 **Ce que la vraie analyse ajoute.** Un modèle multinomial à effets principaux avec de nombreuses covariables, continues et binaires, mesurées au départ; cinq trajectoires comparées à partir d'un seul modèle; des vérifications strictes (effectifs minimaux, chevauchement, taille effective, SMD sous 0,10). L'estimation de l'écart une fois les élèves pondérés fera l'objet d'un prochain article.
 :::
