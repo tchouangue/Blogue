@@ -9,7 +9,7 @@
 <meta name="author" content="Gillis Tchouangue">
 <meta name="description" content="Chez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ.">
 
-<title>Plans d’intervention : comparer Late IP et Never IP par pondération – Les données, simplement</title>
+<title>Comment mettre tout le monde sur le même pied d’égalité (quand les chiffres trichent) – Les données, simplement</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -134,7 +134,7 @@ background: #1B1F4B;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Plans d’intervention : comparer Late IP et Never IP par pondération</h1>
+      <h1 class="title">Comment mettre tout le monde sur le même pied d’égalité (quand les chiffres trichent)</h1>
                   <div>
         <div class="description">
           Chez 40 élèves simulés, 60 % des élèves de Late IP obtiennent leur diplôme contre 85 % de ceux de Never IP. La pondération permet de comparer des élèves qui se ressemblent au départ.
@@ -184,9 +184,9 @@ background: #1B1F4B;
   <li><a href="#baisser-le-volume-des-émile" id="toc-baisser-le-volume-des-émile" class="nav-link" data-scroll-target="#baisser-le-volume-des-émile">Baisser le volume des Émile</a></li>
   <li><a href="#le-contre-interrogatoire" id="toc-le-contre-interrogatoire" class="nav-link" data-scroll-target="#le-contre-interrogatoire">Le contre-interrogatoire</a>
   <ul class="collapse">
-  <li><a href="#y-a-t-il-des-jumeaux" id="toc-y-a-t-il-des-jumeaux" class="nav-link" data-scroll-target="#y-a-t-il-des-jumeaux">Y a-t-il des jumeaux?</a></li>
-  <li><a href="#combien-délèves-restent-vraiment" id="toc-combien-délèves-restent-vraiment" class="nav-link" data-scroll-target="#combien-délèves-restent-vraiment">Combien d’élèves restent vraiment?</a></li>
-  <li><a href="#les-deux-photos-se-ressemblent-elles-enfin" id="toc-les-deux-photos-se-ressemblent-elles-enfin" class="nav-link" data-scroll-target="#les-deux-photos-se-ressemblent-elles-enfin">Les deux photos se ressemblent-elles enfin?</a></li>
+  <li><a href="#est-ce-quon-compare-vraiment-des-pommes-avec-des-pommes" id="toc-est-ce-quon-compare-vraiment-des-pommes-avec-des-pommes" class="nav-link" data-scroll-target="#est-ce-quon-compare-vraiment-des-pommes-avec-des-pommes">Est-ce qu’on compare vraiment des pommes avec des pommes?</a></li>
+  <li><a href="#reste-t-il-assez-délèves-pour-que-ça-compte" id="toc-reste-t-il-assez-délèves-pour-que-ça-compte" class="nav-link" data-scroll-target="#reste-t-il-assez-délèves-pour-que-ça-compte">Reste-t-il assez d’élèves pour que ça compte?</a></li>
+  <li><a href="#la-photo-de-classe-est-elle-enfin-retouchée-correctement" id="toc-la-photo-de-classe-est-elle-enfin-retouchée-correctement" class="nav-link" data-scroll-target="#la-photo-de-classe-est-elle-enfin-retouchée-correctement">La photo de classe est-elle enfin retouchée correctement?</a></li>
   </ul></li>
   <li><a href="#le-verdict" id="toc-le-verdict" class="nav-link" data-scroll-target="#le-verdict">Le verdict</a></li>
   <li><a href="#un-deuxième-suspect" id="toc-un-deuxième-suspect" class="nav-link" data-scroll-target="#un-deuxième-suspect">Un deuxième suspect</a></li>
@@ -217,9 +217,28 @@ background: #1B1F4B;
 <p>Nadia, Louis et les 40 élèves de cette histoire n’existent pas. Les chiffres sont fictifs, mais chaque calcul est exact, et la méthode est celle qu’utilisent de vraies recherches. Les données sont assez petites pour tout refaire à la main : <a href="eleves-simules.csv">le fichier des 40 élèves se télécharge ici (CSV)</a>.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Astuce</span>Dico express
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>PI</strong> : plan d’intervention, le document qui planifie le soutien offert à un élève en difficulté.</li>
+<li><strong>Trajectoire</strong> : la façon dont les PI se succèdent dans le temps (<em>Never IP</em> : jamais de PI; <em>Late IP</em> : un PI qui arrive tard).</li>
+<li><strong>Rapport de risques</strong> : le pourcentage de réussite d’un groupe divisé par celui d’un autre groupe.</li>
+<li><strong>Pondération</strong> : faire compter certains élèves plus que d’autres pour que les deux groupes se ressemblent.</li>
+<li><strong>SMD</strong> : l’écart entre deux groupes sur une caractéristique, exprimé dans une unité comparable d’une caractéristique à l’autre.</li>
+</ul>
+</div>
+</div>
 <section id="le-chiffre-qui-dérange" class="level2">
 <h2 class="anchored" data-anchor-id="le-chiffre-qui-dérange">Le chiffre qui dérange</h2>
-<p>Un jeudi de novembre, Louis entre dans le bureau de Nadia, une feuille à la main. Il coordonne les services aux élèves d’un réseau scolaire, et il a l’air inquiet.</p>
+<p>C’est une erreur classique : on regarde deux pourcentages, on pousse un cri d’orfraie, et on tire de mauvaises conclusions. Un jeudi de novembre, Louis entre dans le bureau de Nadia, une feuille à la main. Il coordonne les services aux élèves d’un réseau scolaire, et il a l’air inquiet.</p>
 <p>« Regarde ça. »</p>
 <p>Nadia est analyste de données. Depuis des mois, elle suit des élèves année après année pour une recherche sur les <strong>plans d’intervention (PI)</strong>, ces documents qui planifient le soutien offert à un élève en difficulté. Elle a regroupé les élèves selon la façon dont leurs PI se succèdent dans le temps. Ces regroupements s’appellent des <strong>trajectoires</strong>. Trois d’entre elles comptent ce jeudi-là :</p>
 <table class="caption-top table">
@@ -466,18 +485,18 @@ background: #1B1F4B;
 <section id="le-contre-interrogatoire" class="level2">
 <h2 class="anchored" data-anchor-id="le-contre-interrogatoire">Le contre-interrogatoire</h2>
 <p>Nadia a appris à se méfier de ses propres résultats. Une pondération n’est pas une preuve. Avant de croire quoi que ce soit, elle la soumet à trois questions.</p>
-<section id="y-a-t-il-des-jumeaux" class="level3">
-<h3 class="anchored" data-anchor-id="y-a-t-il-des-jumeaux">Y a-t-il des jumeaux?</h3>
+<section id="est-ce-quon-compare-vraiment-des-pommes-avec-des-pommes" class="level3">
+<h3 class="anchored" data-anchor-id="est-ce-quon-compare-vraiment-des-pommes-avec-des-pommes">Est-ce qu’on compare vraiment des pommes avec des pommes?</h3>
 <p>Pour chaque type d’élève de Late IP, il doit exister des élèves semblables dans Never IP. Sinon, la pondération n’a personne à qui donner du poids : elle ne peut pas inventer des élèves qui n’existent pas.</p>
 <p>Ici, les quatre profils existent dans les deux groupes. <strong>Aucun élève de Late IP n’est sans jumeau</strong> : 0 % d’élèves hors de la zone de comparaison.</p>
 </section>
-<section id="combien-délèves-restent-vraiment" class="level3">
-<h3 class="anchored" data-anchor-id="combien-délèves-restent-vraiment">Combien d’élèves restent vraiment?</h3>
+<section id="reste-t-il-assez-délèves-pour-que-ça-compte" class="level3">
+<h3 class="anchored" data-anchor-id="reste-t-il-assez-délèves-pour-que-ça-compte">Reste-t-il assez d’élèves pour que ça compte?</h3>
 <p>Des poids inégaux font perdre de l’information : une voix qui compte pour le quart d’une autre en dit moins. Les 20 élèves de Never IP équivalent à <strong>15,3 élèves</strong> « pleinement utiles ». Le calcul : (somme des poids)² ÷ somme des carrés des poids = 10² ÷ 6,55 = 15,3.</p>
 <p>Autre inquiétude : qu’un seul élève pèse trop lourd. Ici, le poids le plus élevé représente 10 % du total. Dans une vraie étude, on s’inquiéterait dès 5 %. Mais avec seulement 20 élèves à pondérer, c’est inévitable : un élève sur vingt pèse déjà 5 %. Nadia a volontairement choisi un petit exemple pour que tout reste calculable à la main. Dans la vraie vie, il faut beaucoup plus d’élèves par groupe.</p>
 </section>
-<section id="les-deux-photos-se-ressemblent-elles-enfin" class="level3">
-<h3 class="anchored" data-anchor-id="les-deux-photos-se-ressemblent-elles-enfin">Les deux photos se ressemblent-elles enfin?</h3>
+<section id="la-photo-de-classe-est-elle-enfin-retouchée-correctement" class="level3">
+<h3 class="anchored" data-anchor-id="la-photo-de-classe-est-elle-enfin-retouchée-correctement">La photo de classe est-elle enfin retouchée correctement?</h3>
 <p>Pour mesurer l’écart entre deux groupes sur une caractéristique, Nadia utilise la <strong>différence moyenne standardisée (SMD)</strong> : l’écart entre les moyennes, divisé par l’écart-type du groupe focal. Sous 0,10, on considère les groupes comparables.</p>
 <table class="caption-top table">
 <colgroup>
@@ -622,7 +641,7 @@ background: #1B1F4B;
 <li><strong>Un équilibre parfait n’est pas une preuve de causalité.</strong> Des groupes qui se ressemblent sur les variables mesurées peuvent encore différer sur autre chose.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -631,7 +650,7 @@ background: #1B1F4B;
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Estimand.</strong> Ces poids estiment l’effet moyen chez les élèves du groupe focal X (ATT). Les élèves de X gardent un poids de 1, ceux du groupe comparé Y reçoivent le rapport e_X(x) ÷ e_Y(x). Avec plusieurs trajectoires, les scores e_k(x) = P(T = k | x) viennent d’un seul modèle multinomial; chaque comparaison n’utilise que les deux scores de la paire.</p>
 <p><strong>Pourquoi ce poids (règle de Bayes).</strong> Pour que Y ressemble à X, un élève de Y de profil x doit compter comme P(x | X) ÷ P(x | Y). Par Bayes, P(x | k) = e_k(x) × P(x) ÷ P(k). Dans le rapport, P(x) s’annule : il reste e_X(x) ÷ e_Y(x), multiplié par la constante P(Y) ÷ P(X), identique pour tous les élèves. On la retire : elle s’annule dans les moyennes pondérées, qui divisent par la somme des poids. Sans elle, la somme des poids de Y égale l’effectif de X. Vérification pour Malik : e_Late = 2 ÷ 10, e_Never = 5 ÷ 10; P(x | Late) = 2 ÷ 10 = 0,20; P(x | Never) = 5 ÷ 20 = 0,25; le rapport des parts vaut 0,80, soit 0,40 × 2, où 2 = P(Never) ÷ P(Late) = 20 ÷ 10.</p>
