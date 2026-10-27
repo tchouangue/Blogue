@@ -18,6 +18,7 @@ Cet article prolonge [le premier](../ponderation-trajectoires-pi/index.qmd) et [
 - **ATO** : l'effet moyen chez les élèves qui auraient pu aller dans l'un ou l'autre groupe, ceux qui sont dans la « zone de chevauchement ».
 - **Score de propension** : la chance, pour un élève de profil donné, de se retrouver dans un groupe plutôt que dans l'autre.
 - **Poids** : le nombre de « voix » que compte chaque élève dans le calcul.
+- **Appariement** : jumeler chaque élève du groupe focal à un élève du groupe comparé de score très proche, et écarter les autres.
 :::
 
 ## La question que Louis n'avait pas posée
@@ -65,7 +66,7 @@ Elle calcule ensuite le score de propension de chaque profil : parmi les élève
 
 Ce sont exactement les chiffres du chevauchement du premier article. La seule différence : on compare ici deux groupes, sans tenir compte de Early persistent IP.
 
-« À partir de ce score, chaque question fabrique ses propres poids », dit Nadia.
+« À partir de ce score, chaque question fabrique ses propres poids, dit Nadia. Et je te montrerai ensuite une quatrième approche, l'appariement, qui vise la même population que l'ATT sans passer par des poids. »
 
 ## Calcul 1 : l'ATT (ce qu'on a déjà fait)
 
@@ -147,6 +148,47 @@ Ce sont exactement les chiffres du chevauchement du premier article. La seule di
 
 **La photo visée.** 24 % d'Inès, 23 % de Malik, 27 % de Camille, 26 % d'Émile. Les poids ne dépassent jamais 1, donc aucun élève ne prend toute la place.
 
+## Calcul 4 : l'appariement au plus proche voisin
+
+Louis a une dernière question, celle qu'on pose toujours.
+
+« J'ai déjà entendu parler de l'appariement. Pour chaque élève de Late IP, on trouve un jumeau dans Never IP. Ce n'est pas la même chose que la pondération?
+
+— C'est une autre façon d'obtenir la même photo, répond Nadia. Elle vise la même population que l'ATT : les élèves de Late IP, tels qu'ils sont. Mais au lieu de donner un poids à chaque élève de Never IP, on en choisit certains et on écarte les autres. »
+
+**La règle.**
+
+1. On utilise le même score *s* que plus haut.
+2. Pour chaque élève de Late IP, on cherche l'élève de Never IP dont le score est le plus proche. Ici, le score ne prend que quatre valeurs (0,500, 0,286, 0,429 et 0,200) : le plus proche voisin est donc un élève de Never IP du même profil.
+3. Quand plusieurs jumeaux sont possibles, on en tire un au hasard. On travaille *sans remise* : un élève de Never IP ne peut servir qu'une fois.
+4. Les élèves de Never IP qui n'ont pas été choisis sont écartés.
+
+**Le jumelage, profil par profil.**
+
+| Profil | Élèves de Late IP à jumeler | Élèves de Never IP disponibles (diplômés) | Jumeaux retenus | Diplômés parmi les jumeaux |
+|---|:-:|:-:|:-:|:-:|
+| Inès | 3 | 3 (2) | 3 sur 3 | 2 (certain) |
+| Malik | 2 | 5 (4) | 2 sur 5 | 2 ou 1 |
+| Camille | 3 | 4 (3) | 3 sur 4 | 3 ou 2 |
+| Émile | 2 | 8 (8) | 2 sur 8 | 2 (certain) |
+| **Total** | **10** | **20 (17)** | **10 sur 20** | **7, 8 ou 9** |
+
+Chez Malik, il y a 10 façons de tirer 2 élèves parmi 5. Dans 6 d'entre elles, les deux jumeaux sont diplômés (4 diplômés parmi 5, soit 4 × 3 ÷ 2 = 6 paires). Il y a donc 60 % de chances d'obtenir 2 diplômés, et 40 % d'en obtenir 1. Chez Camille, il y a 4 façons de tirer 3 élèves parmi 4. Dans une seule, on laisse de côté l'élève non diplômé (3 diplômés, 25 %). Dans les trois autres, on le garde (2 diplômés, 75 %).
+
+**Ce que donne chaque tirage.** Le nombre de diplômés dans le groupe jumelé vaut 2 + (2 ou 1) + (3 ou 2) + 2.
+
+| Diplômés parmi les 10 jumeaux | Probabilité du tirage | Pourcentage de diplômés | Rapport de risques (0,600 ÷ pourcentage) |
+|:-:|:-:|:-:|:-:|
+| 9 | 0,60 × 0,25 = 15 % | 90 % | 0,67 |
+| 8 | 0,60 × 0,75 + 0,40 × 0,25 = 55 % | 80 % | 0,75 |
+| 7 | 0,40 × 0,75 = 30 % | 70 % | 0,86 |
+
+En moyenne : 9 × 0,15 + 8 × 0,55 + 7 × 0,30 = **7,85 diplômés sur 10**, soit 78,5 %. C'est exactement ce que donnait la pondération ATT.
+
+« Même cible, même résultat moyen, conclut Nadia. Mais regarde la différence. Avec la pondération, j'utilise les 20 élèves de Never IP et j'obtiens toujours 0,76. Avec l'appariement, je n'en retiens que 10, et selon le tirage mon rapport varie de 0,67 à 0,86. »
+
+**Pour de vraies données.** Dans un vrai projet, les élèves ne se répartissent pas en quatre profils : le score est estimé par un modèle, et on jumelle sur le score en acceptant un écart maximal (un « calibre »). Les élèves sans jumeau assez proche sont écartés. Les deux méthodes ont toujours besoin d'un bon chevauchement et se vérifient avec le SMD.
+
 ## Pourquoi les trois réponses diffèrent
 
 Louis regarde les trois chiffres : 0,76, 0,81, 0,79.
@@ -182,6 +224,7 @@ Un avertissement s'impose : chaque case ne compte que 2 à 8 élèves. Les rappo
 | **ATT** | 60,0 % | 78,5 % | **0,76** | 1,00 | 10,0 / 15,3 |
 | **ATE** | 67,2 % | 82,8 % | **0,81** | 5,00 | 8,8 / 19,3 |
 | **ATO** | 63,4 % | 80,6 % | **0,79** | 0,80 | 9,7 / 17,6 |
+| **Appariement** (cible ATT, sans remise) | 60,0 % | 78,5 % en moyenne (70, 80 ou 90 % selon le tirage) | 0,67 à 0,86 selon le tirage | (aucun poids) | 10 / 10 |
 
 La taille effective, vue dans le premier article, se calcule pareil : (somme des poids)² ÷ somme des carrés des poids. Pour l'ATE de Late IP : 30² ÷ 102,8 = 8,8.
 
@@ -216,25 +259,6 @@ Louis réfléchit.
 | **ATE** | La décision vise tous les élèves | Très sensible aux profils rares; exige un excellent chevauchement |
 | **ATO** | Le chevauchement est limité et on veut une estimation stable | La population visée est définie par la méthode |
 
-## Et l'appariement?
-
-Louis a une dernière question, celle qu'on pose toujours.
-
-« J'ai déjà entendu parler de l'appariement au plus proche voisin. Pour chaque élève de Late IP, on trouve un jumeau dans Never IP. Ce n'est pas la même chose?
-
-— C'est une autre façon de viser la même population. L'appariement jumelle chaque élève de Late IP à son voisin le plus proche (même score de propension) et jette les autres élèves de Never IP. La pondération garde tous les élèves de Never IP et leur donne un poids. »
-
-Nadia refait le calcul avec les élèves de Late IP, chacun jumelé au hasard à un élève de Never IP du même profil.
-
-- 3 élèves jumelés à Inès : en moyenne 3 × 2/3 = 2,00 diplômés.
-- 2 élèves jumelés à Malik : en moyenne 2 × 4/5 = 1,60 diplômé.
-- 3 élèves jumelés à Camille : en moyenne 3 × 3/4 = 2,25 diplômés.
-- 2 élèves jumelés à Émile : en moyenne 2 × 8/8 = 2,00 diplômés.
-
-« Au total : 7,85 diplômés sur 10, soit 78,5 %. Exactement ce que la pondération ATT donnait. La différence, c'est que l'appariement dépend du hasard des jumelages et ne retient que 10 élèves de Never IP, alors que la pondération utilise les 20. »
-
-**Pour de vraies données.** Dans un vrai projet, les élèves ne se répartissent pas en quatre profils. Le score est estimé par un modèle, et deux élèves ne sont jamais identiques sur toutes les variables. Le jumelage se fait alors sur le score, et les deux méthodes ont toujours besoin d'un bon chevauchement.
-
 ## Les pièges à éviter
 
 - **Choisir l'estimation après avoir vu les résultats.** Ici, on pourrait préférer 0,81 parce qu'il s'éloigne moins de 1. Le choix se fait avant, selon la question posée.
@@ -257,7 +281,7 @@ Nadia refait le calcul avec les élèves de Late IP, chacun jumelé au hasard à
 
 **Vérification des chiffres.** Les sommes pondérées, les rapports et les tailles effectives de l'article sont recalculés à partir du fichier CSV. Taille effective : ATE Late 30² ÷ 102,83 = 8,75; ATE Never 30² ÷ 46,55 = 19,33; ATO Late 6,243² ÷ 4,030 = 9,67; ATO Never 6,243² ÷ 2,213 = 17,61.
 
-**Appariement.** Avec un jumelage 1:1 avec remise au sein de chaque profil, l'espérance du nombre de diplômés dans le groupe jumelé égale la somme pondérée de l'ATT, soit 7,85. Les erreurs-types d'un estimateur par appariement exigent des méthodes dédiées (Abadie et Imbens).
+**Appariement.** Avec un jumelage 1:1 sans remise au sein de chaque profil, le nombre de diplômés parmi les jumeaux suit, profil par profil, une loi hypergéométrique. Son espérance vaut 2,00 + 1,60 + 2,25 + 2,00 = 7,85, égale à la somme pondérée de l'ATT. Sa variance vaut 0 + 0,24 + 0,1875 + 0 = 0,4275 (écart-type de 0,65 diplômé, soit 6,5 points de pourcentage). Avec remise, l'espérance reste 7,85, mais la variance augmente. Les erreurs-types d'un estimateur par appariement exigent des méthodes dédiées (Abadie et Imbens).
 :::
 
 ::: {.a-retenir}
@@ -267,5 +291,5 @@ Nadia refait le calcul avec les élèves de Late IP, chacun jumelé au hasard à
 - Sur les mêmes 30 élèves, les rapports de risques sont de 0,76 (ATT), 0,81 (ATE) et 0,79 (ATO), parce que l'écart n'est pas le même dans tous les profils.
 - On choisit selon la population à qui s'adressera la décision, avant de voir les résultats.
 - L'ATE exige un excellent chevauchement. L'ATO reste stable quand il est limité.
-- L'appariement au plus proche voisin vise la même population que l'ATT, en jetant des élèves au lieu de leur donner un poids.
+- L'appariement au plus proche voisin vise la même population que l'ATT, en écartant des élèves au lieu de leur donner un poids. En moyenne, il donne le même résultat (78,5 %), mais le résultat dépend du tirage des jumeaux (0,67 à 0,86 ici).
 :::
