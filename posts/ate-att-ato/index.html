@@ -183,10 +183,10 @@ background: #1B1F4B;
   <li><a href="#calcul-1-latt-ce-quon-a-déjà-fait" id="toc-calcul-1-latt-ce-quon-a-déjà-fait" class="nav-link" data-scroll-target="#calcul-1-latt-ce-quon-a-déjà-fait">Calcul 1 : l’ATT (ce qu’on a déjà fait)</a></li>
   <li><a href="#calcul-2-late" id="toc-calcul-2-late" class="nav-link" data-scroll-target="#calcul-2-late">Calcul 2 : l’ATE</a></li>
   <li><a href="#calcul-3-lato" id="toc-calcul-3-lato" class="nav-link" data-scroll-target="#calcul-3-lato">Calcul 3 : l’ATO</a></li>
+  <li><a href="#calcul-4-lappariement-au-plus-proche-voisin" id="toc-calcul-4-lappariement-au-plus-proche-voisin" class="nav-link" data-scroll-target="#calcul-4-lappariement-au-plus-proche-voisin">Calcul 4 : l’appariement au plus proche voisin</a></li>
   <li><a href="#pourquoi-les-trois-réponses-diffèrent" id="toc-pourquoi-les-trois-réponses-diffèrent" class="nav-link" data-scroll-target="#pourquoi-les-trois-réponses-diffèrent">Pourquoi les trois réponses diffèrent</a></li>
   <li><a href="#ce-que-coûtent-les-trois-choix" id="toc-ce-que-coûtent-les-trois-choix" class="nav-link" data-scroll-target="#ce-que-coûtent-les-trois-choix">Ce que coûtent les trois choix</a></li>
   <li><a href="#alors-lequel-choisir" id="toc-alors-lequel-choisir" class="nav-link" data-scroll-target="#alors-lequel-choisir">Alors, lequel choisir?</a></li>
-  <li><a href="#et-lappariement" id="toc-et-lappariement" class="nav-link" data-scroll-target="#et-lappariement">Et l’appariement?</a></li>
   <li><a href="#les-pièges-à-éviter" id="toc-les-pièges-à-éviter" class="nav-link" data-scroll-target="#les-pièges-à-éviter">Les pièges à éviter</a></li>
   </ul>
 </nav>
@@ -231,6 +231,7 @@ background: #1B1F4B;
 <li><strong>ATO</strong> : l’effet moyen chez les élèves qui auraient pu aller dans l’un ou l’autre groupe, ceux qui sont dans la « zone de chevauchement ».</li>
 <li><strong>Score de propension</strong> : la chance, pour un élève de profil donné, de se retrouver dans un groupe plutôt que dans l’autre.</li>
 <li><strong>Poids</strong> : le nombre de « voix » que compte chaque élève dans le calcul.</li>
+<li><strong>Appariement</strong> : jumeler chaque élève du groupe focal à un élève du groupe comparé de score très proche, et écarter les autres.</li>
 </ul>
 </div>
 </div>
@@ -366,7 +367,7 @@ background: #1B1F4B;
 </tbody>
 </table>
 <p>Ce sont exactement les chiffres du chevauchement du premier article. La seule différence : on compare ici deux groupes, sans tenir compte de Early persistent IP.</p>
-<p>« À partir de ce score, chaque question fabrique ses propres poids », dit Nadia.</p>
+<p>« À partir de ce score, chaque question fabrique ses propres poids, dit Nadia. Et je te montrerai ensuite une quatrième approche, l’appariement, qui vise la même population que l’ATT sans passer par des poids. »</p>
 </section>
 <section id="calcul-1-latt-ce-quon-a-déjà-fait" class="level2">
 <h2 class="anchored" data-anchor-id="calcul-1-latt-ce-quon-a-déjà-fait">Calcul 1 : l’ATT (ce qu’on a déjà fait)</h2>
@@ -657,6 +658,116 @@ background: #1B1F4B;
 </ul>
 <p><strong>La photo visée.</strong> 24 % d’Inès, 23 % de Malik, 27 % de Camille, 26 % d’Émile. Les poids ne dépassent jamais 1, donc aucun élève ne prend toute la place.</p>
 </section>
+<section id="calcul-4-lappariement-au-plus-proche-voisin" class="level2">
+<h2 class="anchored" data-anchor-id="calcul-4-lappariement-au-plus-proche-voisin">Calcul 4 : l’appariement au plus proche voisin</h2>
+<p>Louis a une dernière question, celle qu’on pose toujours.</p>
+<p>« J’ai déjà entendu parler de l’appariement. Pour chaque élève de Late IP, on trouve un jumeau dans Never IP. Ce n’est pas la même chose que la pondération?</p>
+<p>— C’est une autre façon d’obtenir la même photo, répond Nadia. Elle vise la même population que l’ATT : les élèves de Late IP, tels qu’ils sont. Mais au lieu de donner un poids à chaque élève de Never IP, on en choisit certains et on écarte les autres. »</p>
+<p><strong>La règle.</strong></p>
+<ol type="1">
+<li>On utilise le même score <em>s</em> que plus haut.</li>
+<li>Pour chaque élève de Late IP, on cherche l’élève de Never IP dont le score est le plus proche. Ici, le score ne prend que quatre valeurs (0,500, 0,286, 0,429 et 0,200) : le plus proche voisin est donc un élève de Never IP du même profil.</li>
+<li>Quand plusieurs jumeaux sont possibles, on en tire un au hasard. On travaille <em>sans remise</em> : un élève de Never IP ne peut servir qu’une fois.</li>
+<li>Les élèves de Never IP qui n’ont pas été choisis sont écartés.</li>
+</ol>
+<p><strong>Le jumelage, profil par profil.</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Profil</th>
+<th style="text-align: center;">Élèves de Late IP à jumeler</th>
+<th style="text-align: center;">Élèves de Never IP disponibles (diplômés)</th>
+<th style="text-align: center;">Jumeaux retenus</th>
+<th style="text-align: center;">Diplômés parmi les jumeaux</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Inès</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">3 (2)</td>
+<td style="text-align: center;">3 sur 3</td>
+<td style="text-align: center;">2 (certain)</td>
+</tr>
+<tr class="even">
+<td>Malik</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5 (4)</td>
+<td style="text-align: center;">2 sur 5</td>
+<td style="text-align: center;">2 ou 1</td>
+</tr>
+<tr class="odd">
+<td>Camille</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">4 (3)</td>
+<td style="text-align: center;">3 sur 4</td>
+<td style="text-align: center;">3 ou 2</td>
+</tr>
+<tr class="even">
+<td>Émile</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">8 (8)</td>
+<td style="text-align: center;">2 sur 8</td>
+<td style="text-align: center;">2 (certain)</td>
+</tr>
+<tr class="odd">
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><strong>10</strong></td>
+<td style="text-align: center;"><strong>20 (17)</strong></td>
+<td style="text-align: center;"><strong>10 sur 20</strong></td>
+<td style="text-align: center;"><strong>7, 8 ou 9</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Chez Malik, il y a 10 façons de tirer 2 élèves parmi 5. Dans 6 d’entre elles, les deux jumeaux sont diplômés (4 diplômés parmi 5, soit 4 × 3 ÷ 2 = 6 paires). Il y a donc 60 % de chances d’obtenir 2 diplômés, et 40 % d’en obtenir 1. Chez Camille, il y a 4 façons de tirer 3 élèves parmi 4. Dans une seule, on laisse de côté l’élève non diplômé (3 diplômés, 25 %). Dans les trois autres, on le garde (2 diplômés, 75 %).</p>
+<p><strong>Ce que donne chaque tirage.</strong> Le nombre de diplômés dans le groupe jumelé vaut 2 + (2 ou 1) + (3 ou 2) + 2.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Diplômés parmi les 10 jumeaux</th>
+<th style="text-align: center;">Probabilité du tirage</th>
+<th style="text-align: center;">Pourcentage de diplômés</th>
+<th style="text-align: center;">Rapport de risques (0,600 ÷ pourcentage)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0,60 × 0,25 = 15 %</td>
+<td style="text-align: center;">90 %</td>
+<td style="text-align: center;">0,67</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">0,60 × 0,75 + 0,40 × 0,25 = 55 %</td>
+<td style="text-align: center;">80 %</td>
+<td style="text-align: center;">0,75</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">0,40 × 0,75 = 30 %</td>
+<td style="text-align: center;">70 %</td>
+<td style="text-align: center;">0,86</td>
+</tr>
+</tbody>
+</table>
+<p>En moyenne : 9 × 0,15 + 8 × 0,55 + 7 × 0,30 = <strong>7,85 diplômés sur 10</strong>, soit 78,5 %. C’est exactement ce que donnait la pondération ATT.</p>
+<p>« Même cible, même résultat moyen, conclut Nadia. Mais regarde la différence. Avec la pondération, j’utilise les 20 élèves de Never IP et j’obtiens toujours 0,76. Avec l’appariement, je n’en retiens que 10, et selon le tirage mon rapport varie de 0,67 à 0,86. »</p>
+<p><strong>Pour de vraies données.</strong> Dans un vrai projet, les élèves ne se répartissent pas en quatre profils : le score est estimé par un modèle, et on jumelle sur le score en acceptant un écart maximal (un « calibre »). Les élèves sans jumeau assez proche sont écartés. Les deux méthodes ont toujours besoin d’un bon chevauchement et se vérifient avec le SMD.</p>
+</section>
 <section id="pourquoi-les-trois-réponses-diffèrent" class="level2">
 <h2 class="anchored" data-anchor-id="pourquoi-les-trois-réponses-diffèrent">Pourquoi les trois réponses diffèrent</h2>
 <p>Louis regarde les trois chiffres : 0,76, 0,81, 0,79.</p>
@@ -767,6 +878,14 @@ background: #1B1F4B;
 <td style="text-align: center;">0,80</td>
 <td style="text-align: center;">9,7 / 17,6</td>
 </tr>
+<tr class="odd">
+<td><strong>Appariement</strong> (cible ATT, sans remise)</td>
+<td style="text-align: center;">60,0 %</td>
+<td style="text-align: center;">78,5 % en moyenne (70, 80 ou 90 % selon le tirage)</td>
+<td style="text-align: center;">0,67 à 0,86 selon le tirage</td>
+<td style="text-align: center;">(aucun poids)</td>
+<td style="text-align: center;">10 / 10</td>
+</tr>
 </tbody>
 </table>
 <p>La taille effective, vue dans le premier article, se calcule pareil : (somme des poids)² ÷ somme des carrés des poids. Pour l’ATE de Late IP : 30² ÷ 102,8 = 8,8.</p>
@@ -819,21 +938,6 @@ background: #1B1F4B;
 </tbody>
 </table>
 </section>
-<section id="et-lappariement" class="level2">
-<h2 class="anchored" data-anchor-id="et-lappariement">Et l’appariement?</h2>
-<p>Louis a une dernière question, celle qu’on pose toujours.</p>
-<p>« J’ai déjà entendu parler de l’appariement au plus proche voisin. Pour chaque élève de Late IP, on trouve un jumeau dans Never IP. Ce n’est pas la même chose?</p>
-<p>— C’est une autre façon de viser la même population. L’appariement jumelle chaque élève de Late IP à son voisin le plus proche (même score de propension) et jette les autres élèves de Never IP. La pondération garde tous les élèves de Never IP et leur donne un poids. »</p>
-<p>Nadia refait le calcul avec les élèves de Late IP, chacun jumelé au hasard à un élève de Never IP du même profil.</p>
-<ul>
-<li>3 élèves jumelés à Inès : en moyenne 3 × 2/3 = 2,00 diplômés.</li>
-<li>2 élèves jumelés à Malik : en moyenne 2 × 4/5 = 1,60 diplômé.</li>
-<li>3 élèves jumelés à Camille : en moyenne 3 × 3/4 = 2,25 diplômés.</li>
-<li>2 élèves jumelés à Émile : en moyenne 2 × 8/8 = 2,00 diplômés.</li>
-</ul>
-<p>« Au total : 7,85 diplômés sur 10, soit 78,5 %. Exactement ce que la pondération ATT donnait. La différence, c’est que l’appariement dépend du hasard des jumelages et ne retient que 10 élèves de Never IP, alors que la pondération utilise les 20. »</p>
-<p><strong>Pour de vraies données.</strong> Dans un vrai projet, les élèves ne se répartissent pas en quatre profils. Le score est estimé par un modèle, et deux élèves ne sont jamais identiques sur toutes les variables. Le jumelage se fait alors sur le score, et les deux méthodes ont toujours besoin d’un bon chevauchement.</p>
-</section>
 <section id="les-pièges-à-éviter" class="level2">
 <h2 class="anchored" data-anchor-id="les-pièges-à-éviter">Les pièges à éviter</h2>
 <ul>
@@ -863,7 +967,7 @@ background: #1B1F4B;
 <p><strong>Estimateur.</strong> Rapport de moyennes pondérées (type Hájek) : RR = [Σ wᵢ yᵢ ÷ Σ wᵢ chez L] ÷ [Σ wᵢ yᵢ ÷ Σ wᵢ chez N]. Il suppose l’échangeabilité conditionnelle (aucune confusion non mesurée) et le chevauchement (0 &lt; e(x) &lt; 1).</p>
 <p><strong>Propriétés.</strong> Avec ATE, la somme des poids dans chaque groupe égale l’effectif de la population (30). Avec ATO, les poids sont bornés dans [0 ; 1]; avec un score estimé par régression logistique, les poids ATO assurent un équilibre exact des moyennes des covariables du modèle (Li, Morgan et Zaslavsky, 2018, <em>Journal of the American Statistical Association</em>). Pour plusieurs traitements : Li et Li (2019), <em>Annals of Applied Statistics</em>. Ces références sont citées de mémoire et à valider avant publication.</p>
 <p><strong>Vérification des chiffres.</strong> Les sommes pondérées, les rapports et les tailles effectives de l’article sont recalculés à partir du fichier CSV. Taille effective : ATE Late 30² ÷ 102,83 = 8,75; ATE Never 30² ÷ 46,55 = 19,33; ATO Late 6,243² ÷ 4,030 = 9,67; ATO Never 6,243² ÷ 2,213 = 17,61.</p>
-<p><strong>Appariement.</strong> Avec un jumelage 1:1 avec remise au sein de chaque profil, l’espérance du nombre de diplômés dans le groupe jumelé égale la somme pondérée de l’ATT, soit 7,85. Les erreurs-types d’un estimateur par appariement exigent des méthodes dédiées (Abadie et Imbens).</p>
+<p><strong>Appariement.</strong> Avec un jumelage 1:1 sans remise au sein de chaque profil, le nombre de diplômés parmi les jumeaux suit, profil par profil, une loi hypergéométrique. Son espérance vaut 2,00 + 1,60 + 2,25 + 2,00 = 7,85, égale à la somme pondérée de l’ATT. Sa variance vaut 0 + 0,24 + 0,1875 + 0 = 0,4275 (écart-type de 0,65 diplômé, soit 6,5 points de pourcentage). Avec remise, l’espérance reste 7,85, mais la variance augmente. Les erreurs-types d’un estimateur par appariement exigent des méthodes dédiées (Abadie et Imbens).</p>
 </div>
 </div>
 </div>
@@ -874,7 +978,7 @@ background: #1B1F4B;
 <li>Sur les mêmes 30 élèves, les rapports de risques sont de 0,76 (ATT), 0,81 (ATE) et 0,79 (ATO), parce que l’écart n’est pas le même dans tous les profils.</li>
 <li>On choisit selon la population à qui s’adressera la décision, avant de voir les résultats.</li>
 <li>L’ATE exige un excellent chevauchement. L’ATO reste stable quand il est limité.</li>
-<li>L’appariement au plus proche voisin vise la même population que l’ATT, en jetant des élèves au lieu de leur donner un poids.</li>
+<li>L’appariement au plus proche voisin vise la même population que l’ATT, en écartant des élèves au lieu de leur donner un poids. En moyenne, il donne le même résultat (78,5 %), mais le résultat dépend du tirage des jumeaux (0,67 à 0,86 ici).</li>
 </ul>
 </div>
 
