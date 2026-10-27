@@ -91,7 +91,7 @@ Nadia prend une décision qui structure tout le reste.
 
 **Late IP sera son groupe focal.** Ses élèves restent tels quels : chacun compte pour une voix entière, soit un poids de 1. **Never IP sera le groupe comparé.** C'est sa photo qu'elle va retoucher, pour qu'elle ressemble à celle de Late IP.
 
-Dans le jargon de l'équipe, cette comparaison s'écrit « **Late IP vs Never IP** » : d'abord le groupe focal, ensuite le groupe comparé. La question devient : **comment les élèves de Late IP auraient-ils réussi s'ils n'avaient jamais eu de PI?**
+Dans le jargon de l'équipe, cette comparaison s'écrit « **Late IP vs Never IP** » : d'abord le groupe focal, ensuite le groupe comparé. La question devient : **comment les élèves de Late IP auraient-ils réussi s'ils n'avaient jamais eu de PI?** Ce choix a un nom (l'ATT), et d'autres choix sont possibles : ils font l'objet d'[un autre article](../ate-att-ato/index.qmd).
 
 Les élèves de Never IP qui ressemblent à ceux de Late IP compteront davantage. Les autres compteront moins. Mais de combien? Pour le savoir, Nadia doit répondre à une question étrange.
 
@@ -107,6 +107,13 @@ Elle demande à chaque profil : *quelle chance avait un élève comme toi de se 
 | Émile | 0,154 | 0,615 | 0,231 |
 
 « Regarde Émile, dit Nadia. Il n'a que 15,4 % de chances de se retrouver en Late IP, mais 61,5 % de chances d'être en Never IP. Les Émile peuplent Never IP. Et les Inès, eux, y sont rares. »
+
+::: {.callout-note}
+## Et avec de vraies données?
+Notre exemple n'a que deux caractéristiques oui/non, donc quatre profils : on peut calculer le score en comptant. Avec de nombreuses caractéristiques, dont certaines continues, il n'existe plus de profils identiques à compter, et il n'en faut pas. On estime alors le score avec un modèle, par exemple une régression qui prédit la trajectoire à partir des caractéristiques. Chaque élève reçoit ainsi un seul nombre : sa chance d'être dans chaque trajectoire. Deux élèves qui ont le même score ont, en moyenne, les mêmes caractéristiques. La pondération n'a donc pas besoin de trouver des élèves identiques sur toutes les variables.
+
+Le chevauchement se vérifie alors sur la distribution des scores dans chaque groupe, pas sur un tableau de profils. Et le score n'est pas calculé à partir des résultats du modèle qui a défini les trajectoires : les trajectoires sont déjà connues, et on s'en sert seulement pour savoir dans laquelle chaque élève se trouve.
+:::
 
 ## Baisser le volume des Émile
 
