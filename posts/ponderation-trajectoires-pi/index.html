@@ -375,7 +375,7 @@ background: #1B1F4B;
 <h2 class="anchored" data-anchor-id="une-photo-à-retoucher">Une photo à retoucher</h2>
 <p>Nadia prend une décision qui structure tout le reste.</p>
 <p><strong>Late IP sera son groupe focal.</strong> Ses élèves restent tels quels : chacun compte pour une voix entière, soit un poids de 1. <strong>Never IP sera le groupe comparé.</strong> C’est sa photo qu’elle va retoucher, pour qu’elle ressemble à celle de Late IP.</p>
-<p>Dans le jargon de l’équipe, cette comparaison s’écrit « <strong>Late IP vs Never IP</strong> » : d’abord le groupe focal, ensuite le groupe comparé. La question devient : <strong>comment les élèves de Late IP auraient-ils réussi s’ils n’avaient jamais eu de PI?</strong></p>
+<p>Dans le jargon de l’équipe, cette comparaison s’écrit « <strong>Late IP vs Never IP</strong> » : d’abord le groupe focal, ensuite le groupe comparé. La question devient : <strong>comment les élèves de Late IP auraient-ils réussi s’ils n’avaient jamais eu de PI?</strong> Ce choix a un nom (l’ATT), et d’autres choix sont possibles : ils font l’objet d’<a href="../../posts/ate-att-ato/index.html">un autre article</a>.</p>
 <p>Les élèves de Never IP qui ressemblent à ceux de Late IP compteront davantage. Les autres compteront moins. Mais de combien? Pour le savoir, Nadia doit répondre à une question étrange.</p>
 </section>
 <section id="la-chance-dêtre-là-où-lon-est" class="level2">
@@ -424,6 +424,20 @@ background: #1B1F4B;
 </tbody>
 </table>
 <p>« Regarde Émile, dit Nadia. Il n’a que 15,4 % de chances de se retrouver en Late IP, mais 61,5 % de chances d’être en Never IP. Les Émile peuplent Never IP. Et les Inès, eux, y sont rares. »</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Et avec de vraies données?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notre exemple n’a que deux caractéristiques oui/non, donc quatre profils : on peut calculer le score en comptant. Avec de nombreuses caractéristiques, dont certaines continues, il n’existe plus de profils identiques à compter, et il n’en faut pas. On estime alors le score avec un modèle, par exemple une régression qui prédit la trajectoire à partir des caractéristiques. Chaque élève reçoit ainsi un seul nombre : sa chance d’être dans chaque trajectoire. Deux élèves qui ont le même score ont, en moyenne, les mêmes caractéristiques. La pondération n’a donc pas besoin de trouver des élèves identiques sur toutes les variables.</p>
+<p>Le chevauchement se vérifie alors sur la distribution des scores dans chaque groupe, pas sur un tableau de profils. Et le score n’est pas calculé à partir des résultats du modèle qui a défini les trajectoires : les trajectoires sont déjà connues, et on s’en sert seulement pour savoir dans laquelle chaque élève se trouve.</p>
+</div>
+</div>
 </section>
 <section id="baisser-le-volume-des-émile" class="level2">
 <h2 class="anchored" data-anchor-id="baisser-le-volume-des-émile">Baisser le volume des Émile</h2>
@@ -641,7 +655,7 @@ background: #1B1F4B;
 <li><strong>Un équilibre parfait n’est pas une preuve de causalité.</strong> Des groupes qui se ressemblent sur les variables mesurées peuvent encore différer sur autre chose.</li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -650,7 +664,7 @@ background: #1B1F4B;
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Estimand.</strong> Ces poids estiment l’effet moyen chez les élèves du groupe focal X (ATT). Les élèves de X gardent un poids de 1, ceux du groupe comparé Y reçoivent le rapport e_X(x) ÷ e_Y(x). Avec plusieurs trajectoires, les scores e_k(x) = P(T = k | x) viennent d’un seul modèle multinomial; chaque comparaison n’utilise que les deux scores de la paire.</p>
 <p><strong>Pourquoi ce poids (règle de Bayes).</strong> Pour que Y ressemble à X, un élève de Y de profil x doit compter comme P(x | X) ÷ P(x | Y). Par Bayes, P(x | k) = e_k(x) × P(x) ÷ P(k). Dans le rapport, P(x) s’annule : il reste e_X(x) ÷ e_Y(x), multiplié par la constante P(Y) ÷ P(X), identique pour tous les élèves. On la retire : elle s’annule dans les moyennes pondérées, qui divisent par la somme des poids. Sans elle, la somme des poids de Y égale l’effectif de X. Vérification pour Malik : e_Late = 2 ÷ 10, e_Never = 5 ÷ 10; P(x | Late) = 2 ÷ 10 = 0,20; P(x | Never) = 5 ÷ 20 = 0,25; le rapport des parts vaut 0,80, soit 0,40 × 2, où 2 = P(Never) ÷ P(Late) = 20 ÷ 10.</p>
